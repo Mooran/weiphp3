@@ -15,6 +15,14 @@ namespace Home\Controller;
  */
 
 class FileController extends HomeController {
+
+    public function __construct()
+    {
+        if (!is_login()){
+            $return  = array('status' => 0, 'info' => '上传失败,未登录操作', 'data' => '');
+            $this->ajaxReturn($return);
+        }  
+    }
 	/* 文件上传 */
 	public function upload(){
 		$return  = array('status' => 1, 'info' => '上传成功', 'data' => '');

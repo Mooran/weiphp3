@@ -107,7 +107,7 @@ CREATE TABLE `wp_addons` (
 INSERT INTO `wp_addons` VALUES ('160', 'CustomReply', '自定义回复', '支持图文回复、多图文回复、文本回复功能', '1', 'null', '凡星', '0.1', '1448265263', '1', '0', null, '1');
 INSERT INTO `wp_addons` VALUES ('161', 'AutoReply', '自动回复', 'WeiPHP基础功能，能实现配置关键词，用户回复此关键词后自动回复对应的文件，图文，图片信息', '1', 'null', '凡星', '0.1', '1448265611', '1', '0', null, '1');
 INSERT INTO `wp_addons` VALUES ('162', 'WeiSite', '微官网', '微3G网站、支持分类管理，文章管理、底部导航管理、微信引导信息配置，微网站统计代码部署。同时支持首页多模板切换、信息列表多模板切换、信息详情模板切换、底部导航多模板切换。并配置有详细的模板二次开发教程', '1', '{\"title\":\"\\u70b9\\u51fb\\u8fdb\\u5165\\u9996\\u9875\",\"cover\":\"\",\"info\":\"\",\"background\":\"\",\"code\":\"\",\"template_index\":\"ColorV1\",\"template_footer\":\"V1\",\"template_lists\":\"V1\",\"template_detail\":\"V1\"}', '凡星', '0.1', '1448265667', '0', '0', null, '1');
-INSERT INTO `wp_addons` VALUES ('163', 'UserCenter', '微信用户中心', '实现3G首页、微信登录，微信用户绑定，微信用户信息初始化等基本功能', '1', '{\"score\":\"100\",\"experience\":\"100\",\"need_bind\":\"1\",\"bind_start\":\"0\",\"jumpurl\":\"\"}', '凡星', '0.1', '1448265671', '0', '0', null, '1');
+INSERT INTO `wp_addons` VALUES ('163', 'UserCenter', '微信用户中心', '实现3G首页、微信登录，微信用户绑定，微信用户信息初始化等基本功能', '1', '{\"score\":\"100\",\"experience\":\"100\",\"need_bind\":\"1\",\"bind_start\":\"0\",\"jumpurl\":\"\"}', '凡星', '0.1', '1448265671', '1', '0', null, '1');
 INSERT INTO `wp_addons` VALUES ('164', 'Exam', '微考试', '主要功能有试卷管理，题目录入管理，考生信息和考分汇总管理。', '1', 'null', '凡星', '0.1', '1448265686', '1', '0', null, '1');
 INSERT INTO `wp_addons` VALUES ('165', 'Draw', '比赛抽奖', '功能主要有奖品设置，抽奖配置和抽奖统计', '1', 'null', '凡星', '0.1', '1448265689', '1', '0', null, '1');
 INSERT INTO `wp_addons` VALUES ('166', 'Extensions', '融合第三方', '第三方功能扩展', '1', 'null', '凡星', '0.1', '1448265693', '1', '0', null, '1');
@@ -127,7 +127,7 @@ INSERT INTO `wp_addons` VALUES ('173', 'ConfigureAccount', '帐号配置', '配�
 INSERT INTO `wp_addons` VALUES ('176', 'Ask', '抢答', '用于电视互动答题', '1', '{\"random\":\"1\"}', '凡星', '0.1', '1448265769', '1', '0', null, '1');
 INSERT INTO `wp_addons` VALUES ('177', 'BusinessCard', '微名片', '', '1', '{\"random\":\"1\"}', '凡星', '0.1', '1448265772', '1', '0', null, '1');
 INSERT INTO `wp_addons` VALUES ('178', 'HelloWorld', '微信入门案例', '这是一个简单的入门案例', '1', 'null', '凡星', '0.1', '1448265779', '0', '0', null, '1');
-INSERT INTO `wp_addons` VALUES ('182', 'Vote', '投票', '支持文本和图片两类的投票功能', '1', '{\"random\":\"1\"}', '凡星', '0.1', '1448265793', '0', '0', null, '1');
+INSERT INTO `wp_addons` VALUES ('182', 'Vote', '投票', '支持文本和图片两类的投票功能', '1', '{\"random\":\"1\"}', '凡星', '0.1', '1448265793', '1', '0', null, '1');
 INSERT INTO `wp_addons` VALUES ('183', 'Sms', '短信服务', '短信服务，短信验证，短信发送', '1', '{\"random\":\"1\"}', 'jacy', '0.1', '1448265796', '0', '0', null, '1');
 INSERT INTO `wp_addons` VALUES ('184', 'Survey', '微调研', '实现通用的调研功能，支持单选、多选和简答三种题目的录入', '1', 'null', '凡星', '0.1', '1448265799', '1', '0', null, '1');
 INSERT INTO `wp_addons` VALUES ('185', 'Shop', '商城', '支持后台发布商品 banner管理 前端多模板选择 订单管理等', '1', 'null', '凡星', '0.1', '1448265801', '1', '0', null, '1');

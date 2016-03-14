@@ -121,6 +121,10 @@ class PublicController extends HomeController {
 				$v = trim ( $v );
 			}
 			
+			//通过图片id获取头像url 保存在user表中 Added by mooran
+			empty($_POST['headface_url'])||$data['headimgurl'] = get_cover_url($_POST['headface_url']);
+			unset($_POST['headface_url']);
+
 			$map ['uid'] = $this->mid;
 			if (M ( 'manager' )->where ( $map )->find ()) {
 				M ( 'manager' )->where ( $map )->save ( $_POST );

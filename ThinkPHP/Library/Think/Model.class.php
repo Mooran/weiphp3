@@ -680,7 +680,7 @@ class Model {
 		} elseif (false === $options) { // 用于子查询 不查询只返回SQL
 			$options = array ();
 			// 分析表达式
-			$options = $this->_parseOptions ( $options );
+			$options = $this->_parseOptions ( $options ,true);
 			return '( ' . $this->fetchSql ( true )->select ( $options ) . ' )';
 		}
 		// 分析表达式
@@ -750,7 +750,7 @@ class Model {
 	 *        	表达式参数
 	 * @return array
 	 */
-	protected function _parseOptions($options = array()) {
+	protected function _parseOptions($options = array() , $isSubquery = false) {
 		if (is_array ( $options ))
 			$options = array_merge ( $this->options, $options );
 		
@@ -760,7 +760,8 @@ class Model {
 			$fields = $this->fields;
 		} else {
 			// 指定数据表 则重新获取字段列表 但不支持类型检测
-			$fields = $this->getDbFields ();
+			// 如果是子查询 则不获取字段列表 Added By Mooran
+			$isChildQuery && $fields = $this->getDbFields ();
 		}
 		
 		// 数据表别名

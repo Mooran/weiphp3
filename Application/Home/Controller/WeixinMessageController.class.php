@@ -69,21 +69,27 @@ class WeixinMessageController extends HomeController {
 		$row = 20;
 		$limit = (($page - 1) * $row) . ',' . ($page * $row);
 		
-		/* 查询记录总数 */
-		$count = M ()->query ( "SELECT count(DISTINCT FromUserName) as num FROM `wp_weixin_message`" );
-		$count = intval ( $count [0] ['num'] );
-		
+		/* 查询记录总数 Modified By Mooran*/
+		$weixinMessage = M('weixin_message');
+		$count = $weixinMessage->count('DISTINCT FromUserName');
 		// 分页
 		if ($count > $row) {
 			$page = new \Think\Page ( $count, $row );
 			$page->setConfig ( 'theme', '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%' );
 			$list_data ['_page'] = $page->show ();
 		}
-		
-		$token = get_token ();
-		$sql = "SELECT * FROM (SELECT * FROM wp_weixin_message WHERE type=0 AND `ToUserName` = '{$token}' ORDER BY is_read ASC, id DESC) temp GROUP BY FromUserName ORDER BY is_read ASC,id DESC LIMIT " . $limit;
-		$list ['list_data'] = M ()->query ( $sql );
-		
+		$token = get_token();
+		/*Modified By Mooran*/	
+		$condition = array('type'=>0,'ToUserName'=>$token);
+		$subQuery = $weixinMessage	-> where($condition)
+									-> order('is_read ASC,id DESC')
+									-> select(false);
+		$list ['list_data'] =  M()	->table($subQuery.' temp')
+									->group('FromUserName')
+									->order('is_read ASC,id DESC')
+									->limit($limit)
+									->select();
+
 		$dao = D ( 'Common/User' );
 		foreach ( $list ['list_data'] as &$v ) {
 			$user = $dao->getUserInfoByOpenid ( $v ['FromUserName'] );
